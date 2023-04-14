@@ -21,7 +21,7 @@ const Radio: FC<RadioProps> = () => {
   }, [currentFilter])
 
   async function setupApi(stationFilter: string): Promise<Station[]> {
-    const api = new RadioBrowserApi('Neponyatnost online radio')
+    const api = new RadioBrowserApi('Neponyatnost online radio', true)
     const stations = await api.searchStations({
       language: 'english',
       tag: stationFilter,
