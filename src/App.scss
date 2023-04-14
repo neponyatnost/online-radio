@@ -1,0 +1,199 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 10s linear;
+  }
+}
+
+.App-header {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heading {
+  color: beige;
+  font-size: 2rem;
+}
+
+.radio {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  width: 100%;
+  gap: 0.5rem;
+
+  .filter {
+    border: 1px solid #ff00ff;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #ff00ff63;
+    }
+
+    &.selected {
+      background-color: #ff00ffc2;
+    }
+  }
+}
+
+.stations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+
+  @media (max-width: 992.99px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 768.99px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 480.99px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .station {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ff00ff52;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    border-radius: 10px;
+    transition: border-color 0.2s ease-in-out;
+    position: relative;
+
+    &:hover {
+      border-color: #ff00ffc2;
+    }
+  }
+}
+
+.radio-icon {
+  border-radius: 50%;
+  box-shadow: 1px 1px 31px -10px rgba(255, 0, 255, 1);
+  -webkit-box-shadow: 1px 1px 31px -10px rgba(255, 0, 255, 1);
+  -moz-box-shadow: 1px 1px 21px -15px rgba(255, 0, 255, 1);
+}
+
+@media (max-width: 480.99px) {
+  .radio-icon {
+    display: none;
+  }
+}
+
+.station-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+
+  .name {
+    text-align: center;
+  }
+}
+
+audio {
+  width: 100%;
+}
+
+.rhap_controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .rhap_main-controls {
+    width: 50px;
+  }
+}
+
+.rhap_container {
+  width: 100%;
+}
+
+.rhap_play-pause-button {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  img {
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  @supports (-webkit-touch-callout: none) {
+    width: 50px;
+    height: 50px;
+    background-color: #ff00ffc2;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    &::after {
+      content: '>';
+      font-size: 2rem;
+      color: #fff;
+    }
+    img {
+      display: none;
+    }
+  }
+}
+
+.rhap_volume-button {
+  width: 1px;
+  height: 1px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  img {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+[aria-label='Pause'] {
+  img {
+    animation: App-logo-spin infinite 5s;
+  }
+}
