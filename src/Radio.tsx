@@ -50,6 +50,12 @@ const Radio: FC<RadioProps> = () => {
 
   return (
     <div className='radio'>
+      {!stations?.length && (
+        <h4>
+          If radio stations are not displayed in the list, disable the blocking
+          of unsafe content in the site settings.
+        </h4>
+      )}
       <div className='filters'>
         {filters.map((filter) => (
           <span
